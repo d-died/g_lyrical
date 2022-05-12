@@ -1,8 +1,9 @@
 import React from 'react';
+// import * as ReactDOMClient from 'react-dom/client';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-client';
 // ApolloClient is entirely independent. It gets data from our server and stores it locally. 
-import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider, InMemoryCache } from 'react-apollo';
 // This ApolloProvider is the glue layer between the ApolloClient and our React app
 // This is what integrates Apollo with React. 
 import SongList from './components/SongList';

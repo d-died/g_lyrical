@@ -14,8 +14,6 @@ if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
 
-// console.log(process.env.MONGO_USER, process.env.MONGO_PASSWORD)
-
 mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URI, {
   // authSource: 'admin',

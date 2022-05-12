@@ -1,4 +1,5 @@
 import React from "react";
+import { Component } from "react";
 import gql from 'graphql-tag';
 //this graphql-tag is a helper library that allows us to make queries within a JS/JSX file.
 // BECAUSE QUERIES ARE NOT VALID JS(X) CODE
@@ -6,7 +7,7 @@ import { graphql } from 'react-apollo';
 // this is the library that bonds apollo library and graphQL
 
 
-class SongList extends React.Component {
+class SongList extends Component {
     render() {
         console.log(this.props)
        return <div>Song List</div>
