@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const models = require('./models');
 const { graphqlHTTP } = require('express-graphql');
@@ -8,12 +9,12 @@ const schema = require('./schema/schema');
 const app = express();
 
 // Replace with your mongoLab URI
-const MONGO_URI = 'mongodb+srv://dsump:LrVRJ0OUnddEILJo@sei.dxmeg.mongodb.net/Grider-Lyircal?retryWrites=true&w=majority';
+const MONGO_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@sei.dxmeg.mongodb.net/Grider-Lyircal?retryWrites=true&w=majority`;
 if (!MONGO_URI) {
   throw new Error('You must provide a MongoLab URI');
 }
 
-
+// console.log(process.env.MONGO_USER, process.env.MONGO_PASSWORD)
 
 mongoose.Promise = global.Promise;
 mongoose.connect(MONGO_URI, {

@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-client';
+// ApolloClient is entirely independent. It gets data from our server and stores it locally. 
 import { ApolloProvider } from 'react-apollo';
+// This ApolloProvider is the glue layer between the ApolloClient and our React app
+// This is what integrates Apollo with React. 
+import SongList from './components/SongList';
 
 const client = new ApolloClient({});
 // Apollo makes the assumption that the app.use() in server.js is routed to '/graphql'
@@ -11,11 +15,10 @@ const client = new ApolloClient({});
 const Root = () => {
   return (
     <ApolloProvider client={client}>
-      <div>Lyrical</div>
+      <SongList />
     </ApolloProvider>
   );
 };
-// Apollo Provider is basically the glue layer between the backend, the Apollo Store, and the front end
 
 ReactDOM.render(
   <Root />,
